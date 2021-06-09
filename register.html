@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="header1">
+        <div class="container1">
+            <img style="width: 50px; height: 50px;" class="logo" src="logo.jpg" alt="logo">
+            <div class="links">
+               <span class="icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </span>
+               <ul>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../ourtale.html">Our tale</a></li>
+                  <li class="dropdown"><a href="../products.html" class="dropbtn">Products</a>
+                      <div class="dropdown-content">
+                        <table>
+                            <tr>
+                              <th style="color: rgb(158, 117, 105); font-size: 18px;"><b>Clothing</b></th>
+                              <th style="color: rgb(158, 117, 105);font-size: 18px; "><b>Accessories</b></th>
+                            </tr>
+                            <tr>
+                              <td><a href ="./products.html#popular">Dresses</a></td>
+                              <td><a href ="./products.html#popular4">Veils</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href ="./products.html#popular1">Skirts</a></td>
+                                <td><a href ="./products.html#popular5">Skin Care</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href ="./products.html#popular2">Blouses</a></td>
+                            </tr>
+                            <tr>
+                              <td><a href ="./products.html#popular3">Jacket</a></td>
+                          </tr>
+                          </table>
+                      </div>
+                   </li>
+                   <li><a href="../ourspecialty.html">Our Specialty</a></li>
+                    <li><a href="../register.html"><strong>Register</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1 class="heading"> <span>Shop</span> Now </h1>
+    <section class="shop" id="shop">
+
+        <div class="row">
+            
+            <div class="image">
+                <img src="register.jpg" alt="">
+            </div>
+             
+            <form id="myform" action="index.html" method="post" onsubmit="return validation()" autocomplete="on" >
+
+    
+                <div class="inputBox">
+                    <input name="fname" type="text" placeholder="First name" id="user" class="control" required>
+                    <input name="lname" type="text" placeholder="last name" id="user2" class="control" required>
+                    <input name="email" type="email" id="email" class="control" placeholder="email" required>
+                    <input  name="number" type="tel" id="mobile" class="control" placeholder="mobile phone number"  maxlength="11"  required>
+                    <input  name="password"type="password" id ="pass" class="control" placeholder="password" required>
+                    <input name="passward" type="password" placeholder="confirm password" id="conpass" class="control" >
+                </div>
+    
+            
+                    
+               
+               
+    
+                <textarea placeholder="address" name="address" id="" cols="30" rows="10" required></textarea>
+                
+            <select id="gender" name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                
+    
+                <input type="submit" value="shop now" class="btn" id="submit" >
+    
+            </form>
+    
+        </div>
+    
+    </section>
+    <div id="ourtale">
+
+        <div class="two">
+            <div class="bar1">
+                <ul class="tabs">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../ourtale.html">Our tale</a></li>
+                  <li><a href="../ourspecialty.html">Our Specialty</a></li>
+                  <li><a href="../register.html">Register</a></li>
+                </ul>
+                </div>
+            <div class="aboutus">
+              <h3 style="color: rgb(7, 7, 7); font-size: 30px;">About Us</h3>
+              <p>Fabric Tales EG is a family business created by five sisters in 2017. 
+                  The brand started off much like many others: with social media platforms selling directly to clients who are looking for modest, stylish clothing. 
+                  This presence quickly grew, with one store opening in Heliopolis and others soon to follow.</p>
+               <br>
+               <p>Our Product portfolio has also expanded to include perfumes, 
+                   clothing fragrances, and various accessories, 
+                   all under the umbrella of modestly and detailed high-quality fashion items for every occasion.</p>
+            </div>
+           <div class="icons1">
+               <a href="../index.html"class="fa fa-home"></a>
+              <a href="#" class='fa fa-facebook'></a>
+              <a href="#" class='fa fa-twitter'></a>
+              <a href="#" class='fa fa-instagram'></a>
+           </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="copyright"> Created by Mariam Elmonyer | &copy;2021 Fabric Tales</div>
+       </footer>
+    
+<script>
+   
+
+function validation(){
+  // store the value that user enter in variables
+  var user = document.getElementById('user').value;
+  var user2 =  document.getElementById('user2').value;
+  var pass = document.getElementById('pass').value;
+  var conpass = document.getElementById('conpass').value;
+  var email = document.getElementById('email').value;
+  var mobile = document.getElementById('mobile').value;
+  
+
+  
+ 
+ //  to accert a name of 3 letters at least
+  if(user.length<3){
+      alert("*first Name must be more than 2 letters*");
+      return false;
+  }
+  else if(user2.length<3){
+    alert("*last Name must be more than 2 letters*");
+    return false;
+}
+   else if(mobile.length!=11){
+    alert("*please enter a valid number*");
+    return false;
+}
+  
+  
+  
+  else if(pass.search(/[ ]/)!=-1){
+     alert("**must not include a space**");
+  return false;
+ }
+  // limit the lenght of the  pass
+  else if(pass.length != 8 ){
+    alert("**please write a passward of 8 no long no less**");
+      return false;
+  }
+    // must enclud numbers
+ else if(pass.search(/[0-9]/)==-1){
+      
+      alert("must incluce at least a number");
+      return false;
+  }
+  //not to accept without upper characters
+  else if(pass.search(/[A-Z]/)==-1){
+alert("**must include at leasrt 1 upper character**");
+      return false;
+  }
+  // not to accept without lower characters
+ else if(pass.search(/[a-z]/)==-1){
+      alert("**must include at least 1 lowwer character**");
+  return false;
+ }
+  // not accept without special characters
+  else if(pass.search(/[!\@\#\$\%\^\&\*\(\)\_\-\=\+\<\>\,\?]/)==-1){
+     
+         alert("**must include 1 special character**");
+      return false;
+     }
+  
+  else if(conpass != pass){
+      alert("**passward isnot matches");
+      return false;
+  
+  }
+ 
+    else if(email.indexOf("@") == -1 || email.length < 6){
+    alert("**Please Enter valid Email**");
+     return false;
+}
+ else{
+    alert("Thank you for shopping");
+ }
+
+  
+}
+
+
+
+</script>
+
+</body>
+</html>

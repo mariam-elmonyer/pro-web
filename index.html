@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Oswald&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+
+    <title>Fabric Tales</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img style="height: 982px; width: 1440;" src="fashion1.jpg" alt="fashion picture">
+            <div class="box box1">
+                <div class="thumb"></div>
+                <div class="text">
+                    <h2>Fashion</h2>
+                    <h2>Website</h2>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <img style="height: 982px; width: 1440;" src="fashion22.jpg" alt="fashion picture">
+            <div class="box box2">
+                <div class="thumb"></div>
+                <div class="text">
+                    <h2>SuperWomen</h2>
+                    <h2>Fashion</h2>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <img style="height: 982px; width: 1440;" src="fashion3.jpg" alt="fashion picture">
+            <div class="box box3">
+                <div class="thumb"></div>
+                <div class="text">
+                    <h2>Fabric</h2>
+                    <h2>Tales</h2>
+                </div>
+            </div>
+        </div>
+       
+     <div class="bars">
+        <div class="dots"></div>
+      </div>
+      <form>
+          <button type="submit">
+              <i class="fa fa-search"></i>
+          </button>
+          <input type="text" name="srch" id="srch" required placeholder="Enter your search">
+      </form>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../ourtale.html">Our tale</a></li>
+        <li class="dropdown"><a href="../products.html" class="dropbtn">Products</a>
+            <div class="dropdown-content">
+              <table>
+                  <tr>
+                    <th style="color: rgb(158, 117, 105);"><b>Clothing</b></th>
+                    <th style="color: rgb(158, 117, 105);"><b>Accessories</b></th>
+                  </tr>
+                  <tr>
+                    <td><a href ="./products.html#popular">Dresses</a></td>
+                    <td><a href ="./products.html#popular4">Veils</a></td>
+                  </tr>
+                  <tr>
+                      <td><a href ="./products.html#popular1">Skirts</a></td>
+                      <td><a href ="./products.html#popular5">Skin Care</a></td>
+                  </tr>
+                  <tr>
+                      <td><a href ="./products.html#popular2">Blouses</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href ="./products.html#popular3">Jacket</a></td>
+                </tr>
+                </table>
+            </div>
+         </li>
+         <li><a href="../ourspecialty.html">Our Specialty</a></li>
+          <li><a href="../register.html"><strong>Register</strong></a></li>
+      </ul>
+       <div class="social">
+        <a href="#" class='fa fa-facebook'></a>
+        <a href="#" class='fa fa-twitter'></a>
+        <a href="#" class='fa fa-instagram'></a>
+       </div> 
+       <div class="nav-bars">
+           <div class="nav-dot active">
+               <p>Fashion / Website</p>
+               <p>01</p>
+           </div>
+           <div class="nav-dot">
+            <p>SuperWomen / Fashion</p>
+            <p>02</p>
+        </div>
+        <div class="nav-dot">
+            <p>Fabric / Tales</p>
+            <p>03</p>
+        </div>
+     </div>
+    
+     </div>
+<script>
+ const content =document.querySelectorAll('.content');
+ const dots =document.querySelectorAll('.nav-dot');
+ let slideIndex = 0;
+ showSlide(slideIndex);
+ function showSlide(n){
+     let i;
+     setTimeout(()=>{
+        for(i=0;i<content.length;i++){
+         content[i].style.zIndex = 0;
+         if(i!==slideIndex){
+             content[i].classList.remove('fade');
+         }
+       }
+     }, 1000)
+     
+     for(i=0;i<dots.length;i++){
+        dots[i].className = dots[i].className.replace(" active","");
+    }
+    content[slideIndex].classList.add('fade');
+    content[slideIndex].style.zIndex = 1;
+    dots[slideIndex].className += " active";
+ }
+dots.forEach((item,index)=>{
+   item.addEventListener('click',()=>{
+       showSlide(slideIndex = index);
+   });
+});
+const bars =document.querySelector('.bars');
+const menu =document.querySelector('ul');
+bars.addEventListener('click',()=>{
+    menu.classList.toggle('active');
+})
+</script>
+     
+</body>
+</html>

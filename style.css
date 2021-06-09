@@ -1,0 +1,356 @@
+*{
+    font-family: 'Oswald' , sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: #eee;
+}
+.container{
+    width:80%;
+    height: 90vh;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    background:#eee ;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background:#eee ;
+    display: none;
+}
+
+.content.fade{
+    display: block;
+    animation: fade 1s linear;
+}
+@keyframes fade{
+    to{
+        clip-path: inset(0 0 0 0);
+    }
+    from{
+        clip-path: inset(0 0 0 100%);
+    }
+}
+.content img{
+    position: absolute;
+    top:-50px;
+    left: 100px;
+    width: 50%;
+    min-width: 500px;
+    display: block;
+    mix-blend-mode: darken;
+    object-fit: cover;
+    object-position: left;
+}
+.box{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+.box1{
+    background:  rgba(240, 164, 164, 0.8);
+}
+.box2{
+    background:  rgba(243, 99, 99, 0.8);
+}
+.box3{
+    background:  rgba(241, 207, 134, 0.8);
+}
+.box .thumb{
+    width:280px;
+    height: 400px;
+    border: 30px solid #000;
+    position: absolute;
+    top: 50%;
+    left:33%;
+    transform: translate(-50%,-50%);
+    box-shadow: -4px 3px 6px #3336 ;
+    animation: thumb 1s linear;
+}
+@keyframes thumb{
+    from{
+        opacity: 0;
+        transform:translate(50% ,-70%) rotate(-25deg) ;
+    }
+}
+.box1 .thumb{
+    border-image:url('fashion2.jpg') 20 100;
+    
+}
+.box2 .thumb{
+    border-image:url('fabric2.jpg') 20 100;
+    
+}
+.box3 .thumb{
+    border-image:url('fabric1.jpg') 20 100;
+    
+}
+.box .thumb::before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+    height: 100%;
+}
+.box1 .thumb::before{
+    border: 30px solid rgba(233, 148, 148, 0.6);
+}
+.box2 .thumb::before{
+    border: 30px solid rgba(250, 82, 82, 0.6);
+}
+.box3 .thumb::before{
+    border: 30px solid rgba(248, 207, 119, 0.6);
+}
+.box .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.box .text h2{
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 900;
+    font-size: 5em;
+    animation: text 1s linear;
+}
+.box .text h2:nth-child(2){
+    margin-left: 50px;
+    text-decoration: none;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    animation:text 1s linear ;
+}
+@keyframes text{
+    0% , 100%{
+        clip-path: inset(0 0 0 0);
+    }
+    50%{
+        clip-path: inset(100% 0 0 0);
+    }
+}
+.social{
+    position: absolute;
+    bottom: 11vh;
+    left: 0;
+    width: 50px;
+    z-index: 99;
+}
+.social a{
+    display: block;
+    color: #fff9;
+    text-decoration: none;
+    margin: 10px 0;
+    text-align:center ;
+}
+.social a:hover{
+    color: white;
+}
+.bars{
+    width:50px;
+    height: 50px;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 99;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.bars .dots{
+    width: 20px;
+    height: 2px;
+    background: #fff9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.bars .dots::before , .bars .dots::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 30px;
+    height: 100%;
+    background: #fff9;
+}
+.bars .dots::after{
+    top: -10px;
+}
+
+form,ul{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    line-height: 50px;
+    z-index: 98;
+}
+form{
+    right: 10px;
+    z-index: 99;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff9;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+ul li a:hover{
+    color:white;
+}
+
+li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3ebeb;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1b0b0;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  form input{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 300px;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    background: #ccc;
+    display: none;
+}
+form button {
+    border: none;
+    background: transparent;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: #fff9;
+}
+form:hover button ~ input , input:valid{
+    display: block;
+}
+.nav-bars{
+    position: absolute;
+    right: 0;
+    bottom: 10vh;
+    display: flex;
+    cursor: pointer;
+    z-index: 50;
+    background: #0001;
+}
+.nav-dot{
+    padding: 10px 20px;
+    text-align:center ;
+    text-transform: capitalize;
+    color:#fff9;
+    font-size: 12px;
+}
+.nav-dot.active{
+    background: #222;
+}
+ 
+@media(max-width:1100px){
+    .box.thumb{
+        transform: translate(-20%,-50%);
+    }
+}
+@media(max-width:900px){
+    .nav-dot{
+        padding:5px 10px ;
+        font-size: 10px;
+    }
+    .nav-dot .nav-dot.active{
+        transform:scale(1.1);
+    }
+}
+@media(max-width:600px){
+    .container{
+        width: 100%;
+    }
+    ul{
+        position: fixed;
+        top:0;
+        left:-100%;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        transition:0.5 linear ;
+    }
+    ul.active{
+        left: 0;
+    }
+    .nav-bars{
+        margin-left: 50px;
+    }
+    .content img {
+        left: 0;
+    }
+    .box.thumb{
+        width: 200px;
+        height: 300px;
+    }
+    .bars{
+    transform: scale(0.7);
+    }
+}
+@media(max-height:500px){
+    .content{
+        width: 100%;
+    }
+    .box.thumb{
+        height: 300%;
+    }
+    .box .text{
+         font-size: 65%;
+    }
+}
+@media(max-height:800px){
+  .content img{
+      width: 100%;
+  }
+}
