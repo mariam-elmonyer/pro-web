@@ -45,7 +45,7 @@
                               <td><a href ="./products.html#popular3">Jacket</a></td>
                           </tr>
                           </table>
-                       </div>
+                      </div>
                    </li>
                    <li><a href="./ourspecialty.html">Our Specialty</a></li>
                     <li><a href="./register.html"><strong>Register</strong></a></li>
@@ -62,7 +62,7 @@
                 <img src="register.jpg" alt="">
             </div>
              
-            <form id="myform" action="index.html" method="post" onsubmit="return validation()" autocomplete="on" >
+            <form id="myform"  onsubmit="return validation(event)" autocomplete="on" >
 
     
                 <div class="inputBox">
@@ -131,7 +131,8 @@
 <script>
    
 
-function validation(){
+function validation(e){
+    e.preventDefault();
   // store the value that user enter in variables
   var user = document.getElementById('user').value;
   var user2 =  document.getElementById('user2').value;
@@ -203,6 +204,8 @@ alert("**must include at leasrt 1 upper character**");
 }
  else{
     alert("Thank you for shopping");
+    window.location.href = './index.html';
+     return  true;
  }
 
   
